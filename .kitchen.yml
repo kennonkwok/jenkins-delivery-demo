@@ -1,0 +1,18 @@
+---
+driver:
+  name: digitalocean
+
+provisioner:
+  name: chef_zero
+
+platforms:
+  - name: ubuntu-14.04
+    driver_config:
+      size: 2gb
+      image: ubuntu-14-04-x64
+
+suites:
+  - name: default
+    run_list:
+      - recipe[jenkins-delivery-demo::default]
+    attributes:
